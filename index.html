@@ -5,48 +5,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
     <style type="text/tailwindcss">
+
         @theme {
-        --color-background: #EEEEEA;
-        --color-grey: #7A7A7A;
-      }
+                --color-background: #EEEEEA;
+                --color-grey: #7A7A7A;
+                --font-display: "Inter", "sans-serif"; 
+                
+            }
+        @keyframes fadeInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        }
+        .animate-fade-in-left {
+        animation: fadeInLeft 0.6s ease-out forwards;
+        }
     </style>
 </head>
 
-<body class="bg-background">
+<body class="bg-background font-display">
     <div class="container m-auto px-10">
         <header class="mt-8">
-            <nav class="flex justify-between items-center">
-                <ul class="flex items-center">
-                    <li><a href="#"><img src="./images/logo.svg" alt="timso"></a></li>
-                    <li class="ml-14"><a href="#">features</a></li>
-                    <li class="ml-14"><a href="#">pricing</a></li>
+            <nav class="flex flex-wrap justify-center items-center md:justify-between  ">
+                <ul class="flex items-center animate-fade-in-left">
+                    <li class="transition-transform duration-300 hover:-translate-y-1 hover:text-gray-500"><a
+                            href="#"><img src="./images/logo.svg" alt="timso"></a></li>
+                    <li class="ml-14 transition-transform duration-300 hover:-translate-y-1 hover:text-gray-500"><a
+                            href="#">features</a></li>
+                    <li class="ml-14 transition-transform duration-300 hover:-translate-y-1 hover:text-gray-500"><a
+                            href="#">pricing</a>
+                    </li>
                 </ul>
-                <button class="bg-black text-white rounded-3xl py-4 px-7 cursor-pointer">apply for 2 free
+                <button class="mx-auto mt-8 md:m-0 bg-black text-white rounded-3xl py-4 px-7 cursor-pointer
+  hover:bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out">apply for 2 free
                     months</button>
             </nav>
 
-            <h1 class="text-5xl mt-[120px] text-center mx-auto max-w-2xl">hybrid and remote teams became
+            <h1 class=" mt-[80px] text-center mx-auto max-w-2xl text-3xl mb:mt-[120px] md:text-5xl">hybrid and remote
+                teams became
                 easy to
                 manage now
             </h1>
 
-            <div class="flex items-center justify-center mt-15">
+            <div class="flex items-center justify-center mt-8 mb:mt-15">
                 <p class="text-2xl">turn on timso</p>
-                <div class="bg-[#ADFF33] rounded-3xl w-[80px] h-[40px] flex items-center p-[5px] ml-6">
-                    <span class="bg-[#ffffff] rounded-full  w-[30px] h-[30px]"></span>
-                </div>
+                <label class="relative inline-block w-[80px] h-[40px] ml-6 cursor-pointer">
+                    <input type="checkbox" class="sr-only peer" />
+                    <div
+                        class="bg-[#ADFF33] peer-checked:bg-gray-300 rounded-3xl w-full h-full transition-colors duration-300">
+                    </div>
+                    <span
+                        class="absolute left-[5px] top-[5px] bg-white w-[30px] h-[30px] rounded-full transition-all duration-300 peer-checked:translate-x-[40px]"></span>
+                </label>
             </div>
-            <div class="flex items-center justify-center mt-15">
+            <div class="flex items-center justify-center mt-8 mb:mt-15">
                 <img src="./images/people.png" alt="people">
             </div>
         </header>
 
 
         <section>
-            <div class="flex justify-around">
+            <div class="flex justify-around flex-wrap lg:flex-nowrap  text-center lg:text-start">
                 <div class="max-w-[470px]">
-                    <h2 class="text-5xl mt-[120px] mx-auto max-w-2xl">simple coordination for remote teams and flex
+                    <h2 class="mx-auto max-w-2xl   mt-[80px] mb:mt-[120px] text-3xl md:text-5xl">simple
+                        coordination for remote teams
+                        and flex
                         offices</h2>
                     <p class="mt-10 text-xs"> easy to find and mark who works from the office, who is remote from home
                         or
@@ -68,60 +99,74 @@
             </div>
             <div class="text-grey text-center mt-12">import and synchronize data from HRIS fast</div>
         </section>
-        <section class="flex justify-around mt-[180px]">
-            <div><img src="./images/create-own-statuses.png" alt="create-own-statuses"></div>
+        <section
+            class="flex justify-around mt-[80px] mb:mt-[120px] text-center items-center flex-wrap flex-col-reverse lg:flex-nowrap lg:flex-row lg:items-start text-center lg:text-start">
+            <div class="mt-8 lg:mt-0"><img src="./images/create-own-statuses.png" alt="create-own-statuses"></div>
             <div class="max-w-[405px]">
-                <h2 class="text-5xl  mx-auto max-w-2xl ">create your own custom statuses to optimise routine
+                <h2 class="text-3xl md:text-5xl  mx-auto max-w-2xl ">create your own custom statuses to optimise routine
                 </h2>
                 <div class="mt-8">
                     every team has individual processes
                 </div>
                 <p class="block mt-10">in addition to standard statuses, you can set up your own statuses with
                     customised rules</p>
-                <button class="bg-black text-white rounded-3xl py-4 px-7 mt-8 cursor-pointer">sign up for beta
+                <button class="bg-black text-white rounded-3xl py-4 px-7 mt-8 cursor-pointer
+  hover:bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out">sign up for beta
                     launch</button>
             </div>
         </section>
         <section>
-            <h2 class="text-5xl mt-[120px]  max-w-4xl ml-[100px]">
+            <h2 class="text-3xl md:text-5xl mt-[120px]  md:max-w-4xl md:ml-[100px] text-center md:text-start">
                 flex offices with half-remote teams are a new reality of management
             </h2>
-            <div class="flex justify-between flex-wrap max-w-[1050px] mx-auto mt-10">
+            <div class="flex justify-center md:justify-between flex-wrap max-w-[1050px] mx-auto mt-10">
 
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px] mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1 ">
                     <img src="./images/logos/amazon.png" alt="amazon">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/grammarly.png" alt="grammarly">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/dropbox.png" alt="dropbox">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/oracle.png" alt="oracle">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/slack.png" alt="slack">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/okta.png" alt="okta">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/twitter.png" alt="twitter">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/mastercard.png" alt="mastercard">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/softserve.png" alt="softserve">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/siemens.png" alt="siemens">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/luxoft.png" alt="luxoft">
                 </div>
-                <div class="w-[172px] h-[90px] mt-8 flex items-center">
+                <div
+                    class="w-[172px] h-[90px]  mt-1 md:mt-8 flex items-center transition-transform duration-300 hover:-translate-y-1">
                     <img class="w-full" src="./images/logos/deloitte.png" alt="deloitte">
                 </div>
 
@@ -137,14 +182,16 @@
             </div>
         </section>
 
-        <section class="flex justify-around mt-[180px]">
+        <section
+            class="flex justify-around mt-[80px] mb:mt-[120px] text-center items-center flex-wrap  lg:flex-nowrap lg:items-start text-center lg:text-start">
             <div class="max-w-[480px]">
-                <h2 class="text-5xl mx-auto">optimise your office space via timso
+                <h2 class="text-3xl md:text-5xlmx-auto">optimise your office space via timso
                 </h2>
                 <p class="mt-8">for hybrid teams who use their desks, open spaces and meeting rooms smart</p>
-                <button class="bg-black text-white rounded-3xl py-4 px-7 mt-8">request a demo</button>
+                <button class="bg-black text-white rounded-3xl py-4 px-7 mt-8 cursor-pointer
+  hover:bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out">request a demo</button>
             </div>
-            <div><img src="./images/optimase-office.png" alt="create-own-statuses"></div>
+            <div class="mt-[80px] mb:mt-[0]"><img src="./images/optimase-office.png" alt="create-own-statuses"></div>
 
         </section>
 
@@ -152,22 +199,26 @@
 
 
         <section>
-            <div class="flex justify-around mt-[180px] ">
+            <div
+                class="flex justify-around mt-[80px] mb:mt-[120px]  items-center flex-wrap  lg:flex-nowrap lg:items-start text-center lg:text-start">
                 <div>
                     <img src=" ./images/analyze.png" alt="create-own-statuses">
                 </div>
                 <div class="max-w-[480px]">
-                    <h2 class="text-5xl mx-auto ">analyze your team and office effectivity
+                    <h2 class="text-3xl md:text-5xl mx-auto ">analyze your team and office effectivity
                     </h2>
                     <div class="mt-6">
                         data gives an opportunity to scale smart
                     </div>
                     <p class="mt-10">analyse data from team attendance and office space occupancy</p>
-                    <button class="bg-black text-white rounded-3xl py-4 px-7 mt-8">apply for 2 free months</button>
+                    <button class="bg-black text-white rounded-3xl py-4 px-7 mt-8 cursor-pointer
+  hover:bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out">apply for 2 free
+                        months</button>
                 </div>
             </div>
-            <div class="flex justify-center mt-[80px] ">
-                <div class="w-[560px] bg-white rounded-3xl p-[70px] mr-5">
+            <div
+                class="flex justify-around mt-[80px] mb:mt-[120px]  items-center flex-wrap  lg:flex-nowrap lg:items-start lg:text-start">
+                <div class="w-[380px] lg:w-[560px] bg-white rounded-3xl p-[60px] mr-0 lg:mr-5">
                     <img src="./images/icon-1.png" alt="icon">
                     <h3 class="text-3xl font-bold mt-8">app works
                         <br>
@@ -179,7 +230,7 @@
                         <li class="mt-2 list-disc  ml-5">responsive web-app for desktop</li>
                     </ul>
                 </div>
-                <div class="w-[460px] bg-white rounded-3xl p-[70px]">
+                <div class="w-[380px] lg:w-[460px] mt-4 lg:mt-0 bg-white rounded-3xl p-[60px] ">
                     <img src="./images/icon-2.png" alt="icon">
                     <h3 class="text-3xl font-bold mt-8">all your data <br> are secured </h3>
                     <ul class="mt-5">
@@ -191,33 +242,38 @@
             </div>
         </section>
         <section>
-            <h2 class="text-5xl mt-[120px] text-center mx-auto max-w-2xl">let your team schedule worktime and workspaces
+            <h2 class="text-3xl md:text-5xl mt-[120px] text-center mx-auto max-w-2xl">let your team schedule worktime
+                and workspaces
                 fast
             </h2>
             <div class="text-center mt-8">
-                <button class="bg-black text-white rounded-3xl py-4 px-7 text-center">apply for 2 free months</button>
+                <button class="bg-black text-white rounded-3xl py-4 px-7 mt-8 cursor-pointer
+  hover:bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out">apply for 2 free
+                    months</button>
             </div>
             <div class="flex items-center justify-center mt-15">
                 <img src="./images/people-2.png" alt="people">
             </div>
-            <div class="mt-10 ml-[100px]">
-                <h3 class="text-5xl max-w-2xl ">try two months of full functionality for
+            <div class="mt-10  md:ml-[100px]">
+                <h3 class="text-3xl md:text-5xl max-w-full md:max-w-2xl">try two months of full functionality for
                     free
                 </h3>
                 <p class="mt-8">for companies and teams that sign up for early access</p>
                 <form class="mt-8 flex">
-                    <input class="mr-8 rounded-2xl py-4 pl-8 w-[300px] bg-white" type="email" placeholder="email">
-                    <button class="mr-8 rounded-2xl  py-4  w-[100px]  bg-[#B1FA16] cursor-pointer">send</button>
+                    <input class="mr-2 md:mr-8 rounded-2xl py-4 pl-8 w-[200px] md:w-[300px] bg-white" type="email"
+                        placeholder="email">
+                    <button
+                        class="md:mr-8 rounded-2xl  py-4 w-[80px] md:w-[100px]  bg-[#B1FA16] cursor-pointer">send</button>
                 </form>
             </div>
         </section>
-        <footer class="mt-20 flex justify-around mb-15">
+        <footer class="mt-20 flex justify-around mb-15 flex-wrap items-center">
             <div>write your questions and suggestions to
-                <span class="ml-8 font-bold">hi@timso.app</span>
+                <span class=" ml-2 md:ml-8 font-bold">hi@timso.app</span>
             </div>
-            <div>
+            <div class="mt-8 md:mt-[0px] ml-2 md:ml-0">
                 <img src="./images/logo.svg" alt="logo">
-                <ul class="flex justify-around mt-2">
+                <ul class="flex justify-around mt-">
                     <li class="cursor-pointer">ua</li>
                     <li class="cursor-pointer">ru</li>
                     <li class="cursor-pointer">en</li>
